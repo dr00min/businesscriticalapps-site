@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Confluence Bulk Operations</title>
+  <meta name="description" content="Privacy policy for the Confluence Bulk Operations Atlassian Forge app." />
+  <link rel="canonical" href="https://businesscriticalapps.com/privacy" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="site">
+    <a class="brand" href="/">Business Critical Apps</a>
+    <span class="links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </span>
+  </nav>
+
+  <main>
+    <h1>Privacy Policy — Confluence Bulk Operations</h1>
+    <p class="meta">
+      <div><strong>Effective date:</strong> 2026-06-01</div>
+      <div><strong>App:</strong> Confluence Bulk Operations (an Atlassian Forge app for Confluence Cloud)</div>
+      <div><strong>Publisher:</strong> Business Critical Apps, operated by Andrew Abdul-Malek (sole trader)</div>
+      <div><strong>Contact:</strong> <a href="mailto:info@businesscriticalapps.com">info@businesscriticalapps.com</a></div>
+    </p>
+
+    <h2>1. Summary</h2>
+    <p>
+      Confluence Bulk Operations ("the app", "we") helps you preview and apply bulk find-and-replace
+      changes across pages in a Confluence space, with an undo/rollback safety net.
+    </p>
+    <p>
+      The app is built entirely on <strong>Atlassian Forge</strong> and runs inside Atlassian's hosted
+      infrastructure. <strong>It does not send your data to any server, service, or third party outside
+      Atlassian.</strong> It does not use analytics, advertising, or tracking. It does not sell or share
+      personal data. It does not collect or store Atlassian API tokens or passwords.
+    </p>
+
+    <h2>2. What the app accesses</h2>
+    <p>
+      When you use the app, and acting <strong>with your own Confluence permissions</strong>
+      (Forge <code>asUser</code> authentication), it reads:
+    </p>
+    <ul>
+      <li><strong>Page content</strong> — titles and body (storage format) of current (published) pages
+        in the space you are working in, in order to count matches and show you a dry-run preview of
+        exactly what a replace would change.</li>
+      <li><strong>Space metadata</strong> — the space identifier/key, to scope the operation to the
+        correct space and list its pages.</li>
+    </ul>
+    <p>
+      The app only accesses content within the space you operate on, and only what your own Confluence
+      account is already permitted to see.
+    </p>
+
+    <h2>3. What the app stores, and why</h2>
+    <p>
+      To make every bulk change reversible (the app's core safety feature), the app stores
+      <strong>undo snapshots</strong> in <strong>Forge's hosted key-value storage</strong>, scoped to
+      your installation:
+    </p>
+    <ul>
+      <li>For each page you change, a snapshot of its <strong>prior title and body content, version
+        number, and the find/replace terms used</strong>, recorded immediately before the change is
+        written.</li>
+      <li>This pre-change content is stored so the app can restore the page if you press Undo.</li>
+    </ul>
+    <p>
+      We store the minimum needed to reverse a change. We do not store a separate copy of unchanged
+      pages, browsing history, or any data unrelated to an applied change.
+    </p>
+
+    <h2>4. Where data is stored</h2>
+    <p>
+      All stored data lives in <strong>Forge app storage</strong>, which is hosted and managed by
+      Atlassian within Atlassian's cloud infrastructure. The app has <strong>no external database</strong>
+      and makes <strong>no outbound network calls</strong> to non-Atlassian endpoints. Data residency
+      follows Atlassian Forge's data residency capabilities for the regions Forge supports.
+    </p>
+
+    <h2>5. What the app does NOT do</h2>
+    <ul>
+      <li>Does <strong>not</strong> transmit your data to the developer or any third party.</li>
+      <li>Does <strong>not</strong> use third-party analytics, advertising, tracking, or cookies.</li>
+      <li>Does <strong>not</strong> collect, store, or transmit Atlassian API tokens, personal access
+        tokens (PATs), or passwords.</li>
+      <li>Does <strong>not</strong> sell, rent, or share personal data.</li>
+      <li>Does <strong>not</strong> access pages or spaces beyond those you operate on, or beyond your own
+        Confluence permissions.</li>
+    </ul>
+
+    <h2>6. Data retention and deletion</h2>
+    <ul>
+      <li><strong>Undo snapshots</strong> remain in Forge app storage until: (a) you <strong>undo</strong>
+        the corresponding change (the snapshot is then removed), or (b) the snapshot is
+        <strong>superseded</strong> as a page's undo history is trimmed to the retained depth (1 step on
+        the free plan, up to 10 on the paid plan).</li>
+      <li>When the app is <strong>uninstalled</strong> from your site, Atlassian deletes the app's Forge
+        storage, removing all retained snapshots.</li>
+      <li>To request deletion of stored data while the app remains installed, contact us at
+        <a href="mailto:info@businesscriticalapps.com">info@businesscriticalapps.com</a> or simply undo
+        the changes / uninstall the app.</li>
+    </ul>
+
+    <h2>7. Sub-processors and third parties</h2>
+    <p>
+      The only data processor involved is <strong>Atlassian</strong>, as the platform host (Forge runtime,
+      Forge storage, and the Confluence Cloud APIs). There are no other sub-processors. See Atlassian's
+      own privacy and trust documentation for how Atlassian handles data on its platform.
+    </p>
+
+    <h2>8. Security</h2>
+    <ul>
+      <li>The app runs in Atlassian's <strong>Forge sandbox</strong> and is eligible for the
+        <strong>Runs on Atlassian</strong> program (its compute and storage stay within Atlassian's
+        infrastructure).</li>
+      <li>Authentication to Confluence uses Forge-managed <code>asUser</code> access; the app never sees
+        or stores your credentials or tokens.</li>
+      <li>Data in transit and at rest is protected by the encryption and controls provided by the
+        Atlassian Forge platform.</li>
+    </ul>
+
+    <h2>9. Personal data and your rights</h2>
+    <p>
+      The app does not intentionally collect personal data. However, Confluence page content that you
+      choose to edit may itself contain personal data, and a pre-change snapshot of that content may be
+      stored temporarily to enable undo (see Sections 3 and 6). Depending on your jurisdiction (e.g. GDPR,
+      UK GDPR, CCPA), you may have rights to access, correct, or delete personal data. Because the app
+      stores data only within your own Atlassian instance and only to enable undo, you can exercise these
+      directly by undoing changes or uninstalling the app, or by contacting
+      <a href="mailto:info@businesscriticalapps.com">info@businesscriticalapps.com</a>.
+    </p>
+
+    <h2>10. Children</h2>
+    <p>
+      The app is a workplace tool not directed to children and does not knowingly process children's
+      personal data.
+    </p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>
+      We may update this policy as the app evolves. Material changes will be reflected by updating the
+      effective date above and, where appropriate, noting the change on the Marketplace listing.
+    </p>
+
+    <h2>12. Contact</h2>
+    <p>
+      Questions or requests: <strong><a href="mailto:info@businesscriticalapps.com">info@businesscriticalapps.com</a></strong>
+    </p>
+    <p>Governing law: the laws of England and Wales, United Kingdom.</p>
+
+    <footer>
+      © 2026 Business Critical Apps. Confluence and Atlassian are trademarks of Atlassian Pty Ltd.
+    </footer>
+  </main>
+</body>
+</html>
