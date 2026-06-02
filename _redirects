@@ -1,7 +1,0 @@
-# Serve the non-trailing-slash paths directly with a 200 (rewrite, not a redirect).
-# Cloudflare Pages otherwise issues a 307 from /privacy -> /privacy/ (and /terms),
-# and strict external link validators (e.g. the Atlassian Marketplace listing
-# crawler) reject the redirect as an "invalid link". The trailing-slash forms
-# keep working as before; this just makes the bare forms resolve to 200 too.
-/privacy    /privacy/index.html    200
-/terms      /terms/index.html      200
