@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentation — Bulk Operations for Confluence</title>
+  <meta name="description" content="Setup guide and use cases for Bulk Operations for Confluence — bulk find-and-replace across a Confluence space with dry-run preview and one-click undo." />
+  <link rel="canonical" href="https://businesscriticalapps.com/docs" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="site">
+    <a class="brand" href="/">Business Critical Apps</a>
+    <span class="links">
+      <a href="/">Home</a>
+      <a href="/docs">Docs</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </span>
+  </nav>
+
+  <main>
+    <h1>Documentation</h1>
+    <p class="meta">
+      <div><strong>App:</strong> Bulk Operations for Confluence (an Atlassian Forge app for Confluence Cloud)</div>
+      <div><strong>Provider:</strong> Business Critical Apps, operated by Andrew Abdul-Malek (sole trader)</div>
+    </p>
+
+    <h2>What the app does</h2>
+    <p>
+      <strong>Bulk Operations for Confluence</strong> lets you run a single change across many pages in a
+      Confluence space at once — starting with <strong>bulk find-and-replace</strong>. Instead of opening pages
+      one by one to fix a renamed product, a moved URL, or an outdated term, you describe the change once, review
+      a preview of every page it will touch, and apply it in one step. Every change is snapshotted so you can
+      <strong>undo</strong> it afterwards.
+    </p>
+    <p>
+      The app is built on <strong>Atlassian Forge</strong> and runs entirely inside your Atlassian Cloud
+      instance. It makes no external network calls and stores no content outside Confluence — see
+      <a href="/privacy">Privacy</a>.
+    </p>
+
+    <h2>Common use cases</h2>
+    <ul>
+      <li><strong>Rebrands and renames</strong> — replace an old product, team, or company name across an
+        entire space in one pass.</li>
+      <li><strong>Moved or broken links</strong> — update a URL or domain that appears in many pages.</li>
+      <li><strong>Terminology cleanup</strong> — standardise wording (e.g. "log in" vs "sign in") across
+        documentation.</li>
+      <li><strong>Outdated references</strong> — fix version numbers, dates, or system names that recur
+        throughout a space.</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <ul>
+      <li>A <strong>Confluence Cloud</strong> site.</li>
+      <li>Permission to install Marketplace apps (a Confluence/site administrator), or an admin to install it
+        for you.</li>
+      <li>Space permissions to edit the pages you want to change — the app acts within your existing
+        Confluence permissions and cannot change pages you couldn't edit yourself.</li>
+    </ul>
+
+    <h2>Installation &amp; setup</h2>
+    <ol>
+      <li><strong>Install from the Atlassian Marketplace.</strong> Open the listing for
+        <em>Bulk Operations for Confluence</em> and choose <strong>Get it now</strong> / <strong>Install</strong>,
+        then select your Confluence site. Site administrators can also install it from
+        <em>Confluence&nbsp;→ Settings → Manage apps → Find new apps</em>.</li>
+      <li><strong>Approve the requested permissions.</strong> On install you'll be asked to grant the scopes the
+        app needs (see <em>Permissions</em> below). The app cannot run until these are approved.</li>
+      <li><strong>Open the app in a space.</strong> The app adds a <strong>Bulk Operations</strong> entry to a
+        space. Go to the space where you want to make changes and open <strong>Bulk Operations</strong> from the
+        space sidebar / Content area. There is nothing else to configure — no API keys, accounts, or external
+        setup.</li>
+    </ol>
+
+    <h2>Permissions the app requests (and why)</h2>
+    <ul>
+      <li><strong>Read pages</strong> — to scan the pages in your selected scope and find matches for the
+        preview.</li>
+      <li><strong>Read spaces</strong> — to let you pick the space and list its pages.</li>
+      <li><strong>Write pages</strong> — to apply the change to pages once you confirm the preview.</li>
+      <li><strong>App storage</strong> — to save the pre-change state of each page so the operation can be
+        undone.</li>
+    </ul>
+
+    <h2>How to use it</h2>
+    <ol>
+      <li><strong>Open Bulk Operations</strong> in the target space.</li>
+      <li><strong>Choose the operation</strong> — bulk find-and-replace.</li>
+      <li><strong>Define the change</strong> — enter the text to find and the text to replace it with, and set
+        the scope (the pages to include).</li>
+      <li><strong>Review the dry-run preview.</strong> Before anything is written, the app shows exactly which
+        pages match and how many replacements will be made on each. Nothing has changed at this point.</li>
+      <li><strong>Confirm to apply.</strong> The app snapshots each page's prior state, then applies the
+        replacements and shows you the results.</li>
+      <li><strong>Undo if needed.</strong> If a change wasn't what you intended, use the in-app
+        <strong>undo</strong> to roll back — a single page or the whole batch.</li>
+    </ol>
+
+    <h2>Free vs. paid</h2>
+    <p>
+      The app has a genuinely useful <strong>free tier</strong>: dry-run preview, applying changes to a small
+      batch of pages, and undo are all available for free. A <strong>paid subscription</strong> removes the
+      batch-size limit so you can apply a change across an entire large space in one operation. Pricing is
+      per-user and billed by Atlassian through the Marketplace.
+    </p>
+
+    <h2>Safety &amp; data</h2>
+    <ul>
+      <li>Every change is preceded by a <strong>preview</strong> — the app never writes without your
+        confirmation.</li>
+      <li>Every applied change is <strong>reversible</strong> via undo.</li>
+      <li>Your content <strong>stays in your Atlassian instance</strong> — no external calls, no content stored
+        off-platform. See the <a href="/privacy">Privacy Policy</a>.</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li><strong>The app isn't in the sidebar.</strong> Confirm it's installed (<em>Manage apps</em>) and that
+        you're inside a space, then reload the page.</li>
+      <li><strong>A UI change isn't showing after an update.</strong> Do a hard refresh of the page — the app
+        bundle is cached by the browser.</li>
+      <li><strong>Fewer matches than expected.</strong> Check the scope you selected and that the find text
+        matches exactly; review the preview before applying.</li>
+    </ul>
+
+    <h2>Getting help</h2>
+    <p>
+      Questions, bug reports, and feature requests:
+      <a href="mailto:info@businesscriticalapps.com">info@businesscriticalapps.com</a>, or see the
+      <a href="/support">Support</a> page. We aim to respond within two business days.
+    </p>
+
+    <footer>
+      © 2026 Business Critical Apps. Confluence and Atlassian are trademarks of Atlassian Pty Ltd.
+      &middot; <a href="/support">Support</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a>
+    </footer>
+  </main>
+</body>
+</html>

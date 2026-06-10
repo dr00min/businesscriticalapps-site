@@ -8,9 +8,15 @@ Atlassian Marketplace listing for *Confluence Bulk Operations* links to.
 | File | Served at |
 |---|---|
 | `index.html` | `/` |
+| `docs/index.html` | `/docs` (setup guide + use cases) |
+| `support/index.html` | `/support` |
 | `privacy/index.html` | `/privacy` |
 | `terms/index.html` | `/terms` |
 | `styles.css` | `/styles.css` (shared) |
+
+Each page also has a flat companion at the root (e.g. `docs.html`, `support.html`) so the
+Marketplace link checker doesn't trip on Cloudflare Pages' 307 trailing-slash redirect. When you
+add or change a page, update **both** `<page>/index.html` and `<page>.html`.
 
 The folder-per-page layout gives extension-less URLs (`/privacy`, `/terms`) on Cloudflare Pages
 without needing redirects. These exact URLs are referenced from the app's Marketplace listing and
